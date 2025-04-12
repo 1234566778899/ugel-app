@@ -1,0 +1,5 @@
+runtime: nodejs20
+env: standard
+
+env_variables:
+  MONGO_URI: "mongodb+srv://victor:Dq23PbHt@cluster0.iyqbg9l.mongodb.net/ugel"

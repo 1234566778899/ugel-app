@@ -3,9 +3,10 @@ const { Schema, model } = require('mongoose');
 const UserSchema = Schema({
     username: String,
     password: String,
-    name: String,
-    lname: String,
-    cargo: String,
+    fullname: String,
+    email_personal: String,
+    email_ie: String,
+    job: String,
     dni: String,
     celular: String
 }, {

@@ -1,8 +1,8 @@
-const Teacher = require('../db/Schemas/School');
+const Teacher = require('../db/Schemas/Teacher');
 
 const getTeachers = async (req, res) => {
     try {
-        const data = await Teacher.find();
+        const data = await Teacher.find({});
         return res.status(200).send(data);
     } catch (error) {
         console.log(error);

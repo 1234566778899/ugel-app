@@ -2,28 +2,32 @@ const { Schema, model } = require('mongoose');
 
 const MonitorSchema = Schema({
     user: {
-        name: String,
-        lname: String,
-        cargo: String,
-        dni: String
+        fullname: String,
+        job: String,
+        dni: String,
+        email_personal: String,
+        cellphone: String,
+        email_ie: String
     },
     teacher: {
         code: String,
         name: String,
+        dni: String,
+        job: String,
+        condition: String,
+        cellphone: String
     },
     school: {
         code: String,
         name: String,
-        province: String,
+        place: String,
         district: String
     },
     grade: String,
-    area: {
-        code: String,
-        name: String
-    },
+    area: String,
     section: String,
     level: String,
+    weight: Number,
     performances: [
         {
             desempenio: String,
@@ -37,7 +41,9 @@ const MonitorSchema = Schema({
         }
     ],
     visit: { type: Schema.ObjectId, ref: 'visit' },
-    startAt: Date
+    startAt: Date,
+    isDeleted: { type: Boolean, default: false },
+    type: String,
 }, {
     timestamps: true
 })

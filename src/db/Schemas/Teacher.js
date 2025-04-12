@@ -2,8 +2,12 @@ const { Schema, model } = require('mongoose');
 
 const TeacherSchema = Schema({
     name: String,
-    lname: String,
-    dni: String
+    dni: String,
+    cellphone: String,
+    email: String,
+    job: String,
+    condition: String,
+    school: { type: Schema.Types.ObjectId, ref: 'school' }
 }, {
     timestamps: true
 })

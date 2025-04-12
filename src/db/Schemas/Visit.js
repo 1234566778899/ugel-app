@@ -3,17 +3,26 @@ const { Schema, model } = require('mongoose');
 const VisitSchema = Schema({
     user: {
         name: String,
-        lname: String,
-        cargo: String,
-        dni: String
+        dni: String,
     },
     school: {
         code: String,
         name: String,
-        province: String,
-        district: String
+        district: String,
+        place: String,
+        teachers: [
+            {
+                name: String,
+                dni: String,
+                cellphone: String,
+                email: String,
+                job: String,
+                condition: String,
+            }
+        ]
     },
-    monitors: Number
+    monitors: Number,
+    isDeleted: { type: Boolean, default: false }
 }, {
     timestamps: true
 })
